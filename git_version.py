@@ -45,7 +45,7 @@ def git_version():
                   stdout=PIPE, stderr=PIPE)
         p.stderr.close()
         line = p.stdout.readlines()[0].decode('utf-8')
-        return line.strip()
+        return line.strip().partition("-")[0]
 
     except:
         return None
